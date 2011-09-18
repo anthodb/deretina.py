@@ -15,6 +15,8 @@ Make sure the run script happens before "copy bundle resources"
 Script:
 /usr/bin/python $SOURCE_ROOT/deretina.py
 
+<img src="https://raw.github.com/coryalder/deretina.py/master/img/runscript.png">
+
 (if you know how to run python direct from Xcode, let me know. cory@davander.com)
 
 last updated Sept. 17th 2011
