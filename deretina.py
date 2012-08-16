@@ -7,7 +7,7 @@
 #
 # CONFIGURATION
 # depending on your preference, set should_overwrite_existing_files.
-# script expects images to be located in $SOURCE_ROOT/Assets/
+# script expects images to be located in $SOURCE_ROOT/Assets/ which should be added as a folder reference in Xcode
 # (change that on line 33)
 #
 # INSTALLATION
@@ -15,7 +15,7 @@
 # Make sure the run script happens before "copy bundle resources"
 #
 # Script:
-# /usr/bin/python $SOURCE_ROOT/deretina.py
+# /usr/bin/python $SOURCE_ROOT/deretina.py Assets
 #
 # (if you know how to run python direct from Xcode, let me know. cory@davander.com)
 #
@@ -23,6 +23,7 @@
 
 import os
 import commands
+import sys
 
 imagelist = ['.png','.jpg','.gif']
 # file extensions to treat as images
@@ -30,7 +31,10 @@ imagelist = ['.png','.jpg','.gif']
 should_overwrite_existing_files = False
 # overwrite existing, y/n
 
-resource_root = os.path.join(os.environ['SOURCE_ROOT'],"Assets/")
+default_asset_dir = 'Assets'
+default_asset_dir = sys.argv[1]
+
+resource_root = os.path.join(os.environ['SOURCE_ROOT'], default_asset_dir)
 # path of images, relative to source_root
 
 def crawlFiles(dir):
