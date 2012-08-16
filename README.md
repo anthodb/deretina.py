@@ -14,8 +14,10 @@ script expects images to be located in $SOURCE_ROOT/Assets/
 Place in $SOURCE_ROOT, and add a run-script build step
 Make sure the run script happens before "copy bundle resources"
 
+In this case, the asset directory is `$SOURCE_ROOT/Assets`
+
 *Script:*
-`/usr/bin/python $SOURCE_ROOT/deretina.py`
+`/usr/bin/python $SOURCE_ROOT/deretina.py Assets`
 
 <img src="https://raw.github.com/coryalder/deretina.py/master/img/runscript.png">
 
